@@ -1,3 +1,48 @@
-<p>
-  rentals works!
-</p>
+<p class="lead">Local (8hr/80km) rental rated below:</p>
+<div class="table-responsive">
+<table class="table table-bordered table-hover table-striped table-sm">
+    <thead>
+      <tr class="bg-info text-light">
+        <th scope="col">#</th>
+        <th scope="col">Vehicle</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Rate/ Extra Hour</th>
+        <th scope="col">Rate/ Extra Km</th>
+        <th scope="col">Night Driver Allowance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of localRentalData; let i = index;">
+          <th scope="row">{{ i+1 }}</th>
+          <td>{{ item.vehicle }}</td>
+          <td>{{ item.amount }}</td>
+          <td>{{ item.ratePerHour }}</td>
+          <td>{{ item.ratePerKm }}</td>
+          <td>{{ item.nightDriverAllowance }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="lead">Outstation rentals rated below:</p>
+<div class="table-responsive">
+<table class="table table-bordered table-hover table-striped table-sm">
+    <thead>
+      <tr class="bg-info text-light">
+        <th scope="col">#</th>
+        <th scope="col">Vehicle</th>
+        <th scope="col">Rate/ Extra Km</th>
+        <th scope="col">Minimum Kms/ Day</th>
+        <th scope="col">Night Driver Allowance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of outstationRentalData; let i = index;">
+          <th scope="row">{{ i+1 }}</th>
+          <td>{{ item.vehicle }}</td>
+          <td>{{ item.ratePerKm }}</td>
+          <td>{{ item.minKmsPerDay }}</td>
+          <td>{{ item.nightDriverAllowance }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
